@@ -48,9 +48,9 @@ for problem in problems:
                                         columns=var_names+obj_names)
             pk.dump(data_uniform, open((filename + 'uniform.p'), 'wb'))
             for i in range(num_var+num_obj):
-                data_noisy[:, i] = (data_noisy[:, i]
-                                    + np.random.normal(noise_mean, 
-                                                       noise_std, num_sample))
+                data_noisy[:, i] = (data_noisy[:, i] +
+                                    np.random.normal(noise_mean, 
+                                                     noise_std, num_sample))
             data_noisy = pd.DataFrame(data_noisy,
                                       columns=var_names+obj_names)
             pk.dump(data_noisy, open((filename + 'uniform_noisy.p'), 'wb'))
